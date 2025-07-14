@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/ff10db64-2081-44df-8eb0-a6b877ed81c1.png" 
               alt="StaxInfinity" 
-              className="h-8 sm:h-10 object-contain"
+              className="h-8 sm:h-10 object-contain bg-transparent mix-blend-screen"
             />
           </Link>
 

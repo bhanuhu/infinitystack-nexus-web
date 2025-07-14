@@ -29,7 +29,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/ff10db64-2081-44df-8eb0-a6b877ed81c1.png" 
                 alt="StaxInfinity" 
-                className="h-6 sm:h-8 object-contain"
+                className="h-6 sm:h-8 object-contain bg-transparent mix-blend-screen"
               />
             </Link>
             <p className="text-gray-400 text-sm sm:text-base max-w-xs mx-auto sm:mx-0">
