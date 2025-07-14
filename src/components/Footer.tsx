@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
@@ -26,11 +27,10 @@ const Footer = () => {
           <div className="space-y-4 text-center sm:text-left">
             <Link to="/" className="flex items-center justify-center sm:justify-start space-x-2">
               <img 
-                src="/lovable-uploads/76f6dfe1-4313-4db9-9b48-065ab4814a22.png" 
+                src="/lovable-uploads/ff10db64-2081-44df-8eb0-a6b877ed81c1.png" 
                 alt="StaxInfinity" 
-                className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                className="h-6 sm:h-8 object-contain"
               />
-              <span className="text-lg sm:text-xl font-bold text-cyan-300">StaxInfinity</span>
             </Link>
             <p className="text-gray-400 text-sm sm:text-base max-w-xs mx-auto sm:mx-0">
               Infinite Solutions. Infinite Possibilities. Transforming businesses through innovative technology.

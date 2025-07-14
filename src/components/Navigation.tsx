@@ -23,11 +23,10 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/76f6dfe1-4313-4db9-9b48-065ab4814a22.png" 
+              src="/lovable-uploads/ff10db64-2081-44df-8eb0-a6b877ed81c1.png" 
               alt="StaxInfinity" 
-              className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+              className="h-8 sm:h-10 object-contain"
             />
-            <span className="text-lg sm:text-xl font-bold text-cyan-300">StaxInfinity</span>
           </Link>
 
           {/* Desktop Navigation */}
