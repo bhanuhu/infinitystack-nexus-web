@@ -24,8 +24,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Code className="w-8 h-8 text-cyan-400" />
-            <span className="text-xl font-bold text-cyan-300">InfinityStack</span>
+            <Code className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+            <span className="text-lg sm:text-xl font-bold text-cyan-300">StaxInfinity</span>
           </Link>
 
           {/* Desktop Navigation */}
