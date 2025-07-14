@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Code } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +23,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Code className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+            <img 
+              src="/lovable-uploads/b3dfde5f-f155-45de-be3d-d516b595dbfe.png" 
+              alt="StaxInfinity" 
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
             <span className="text-lg sm:text-xl font-bold text-cyan-300">StaxInfinity</span>
           </Link>
 

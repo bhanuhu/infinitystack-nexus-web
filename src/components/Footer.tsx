@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Code, Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,7 +26,12 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4 text-center sm:text-left">
             <Link to="/" className="flex items-center justify-center sm:justify-start space-x-2">
-              <Code className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+              <img 
+                src="/lovable-uploads/b3dfde5f-f155-45de-be3d-d516b595dbfe.png" 
+                alt="StaxInfinity" 
+                className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
               <span className="text-lg sm:text-xl font-bold text-cyan-300">StaxInfinity</span>
             </Link>
             <p className="text-gray-400 text-sm sm:text-base max-w-xs mx-auto sm:mx-0">
