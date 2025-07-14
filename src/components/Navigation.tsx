@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -24,10 +23,9 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/b3dfde5f-f155-45de-be3d-d516b595dbfe.png" 
+              src="/lovable-uploads/76f6dfe1-4313-4db9-9b48-065ab4814a22.png" 
               alt="StaxInfinity" 
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
             <span className="text-lg sm:text-xl font-bold text-cyan-300">StaxInfinity</span>
           </Link>
