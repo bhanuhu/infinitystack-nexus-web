@@ -53,13 +53,13 @@ const ParticleBackground = () => {
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw particle with green cybernetic glow
+        // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(34, 197, 94, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(34, 211, 238, ${particle.opacity})`;
         ctx.fill();
 
-        // Draw connections with green/cyan gradient
+        // Draw connections
         particles.slice(index + 1).forEach(otherParticle => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
@@ -69,7 +69,7 @@ const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(6, 182, 212, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = `rgba(34, 211, 238, ${0.1 * (1 - distance / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -83,15 +83,13 @@ const ParticleBackground = () => {
     createParticles();
     animate();
 
-    const handleResize = () => {
+    window.addEventListener("resize", () => {
       resizeCanvas();
       createParticles();
-    };
-
-    window.addEventListener("resize", handleResize);
+    });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
 

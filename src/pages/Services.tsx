@@ -4,65 +4,65 @@ import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Code, Cloud, Cpu, Shield } from "lucide-react";
+import { Code, Cloud, Zap, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
       icon: Code,
-      title: "Neural Software Development",
-      description: "We engineer adaptive software systems that learn and evolve. Our cybernetic approach combines human creativity with machine precision to create applications that think beyond traditional programming paradigms.",
-      technologies: ["React", "Node.js", "Python", "TensorFlow", "PostgreSQL", "Docker"],
+      title: "Software Development",
+      description: "We create custom software solutions tailored to your business needs. From web applications to mobile apps, our team delivers high-quality, scalable solutions using the latest technologies and best practices.",
+      technologies: ["React", "Node.js", "Python", "TypeScript", "PostgreSQL", "Docker"],
       features: [
-        "Adaptive Web Applications",
-        "AI-Enhanced Mobile Apps",
-        "Neural API Development",
-        "Quantum Database Design",
-        "Automated Testing Systems",
-        "Continuous Evolution Support"
+        "Custom Web Applications",
+        "Mobile App Development",
+        "API Development & Integration",
+        "Database Design & Optimization",
+        "Quality Assurance & Testing",
+        "Maintenance & Support"
       ]
     },
     {
       icon: Cloud,
-      title: "Cyber-Cloud Solutions",
-      description: "Transform your infrastructure with our neural network-inspired cloud architecture. We create self-healing, auto-scaling systems that adapt to your business needs with machine-like efficiency.",
-      technologies: ["AWS", "Azure", "Kubernetes", "Terraform", "Neural Networks", "Quantum Computing"],
+      title: "Cloud Solutions",
+      description: "Transform your infrastructure with our comprehensive cloud services. We help businesses migrate to the cloud, optimize performance, and ensure scalability while reducing costs and improving reliability.",
+      technologies: ["AWS", "Azure", "Google Cloud", "Kubernetes", "Terraform", "CI/CD"],
       features: [
-        "Neural Migration Strategies",
-        "Self-Healing Infrastructure",
-        "Adaptive Container Systems",
-        "Quantum-Scale Solutions",
-        "Predictive Recovery Systems",
-        "Real-time Neural Monitoring"
+        "Cloud Migration Strategy",
+        "Infrastructure as Code",
+        "Container Orchestration",
+        "Auto-scaling Solutions",
+        "Backup & Disaster Recovery",
+        "Performance Monitoring"
       ]
     },
     {
-      icon: Cpu,
-      title: "AI & Cybernetic Systems",
-      description: "Harness the power of artificial neural networks and machine learning. We build intelligent systems that process data like the human brain but with the speed and precision of advanced computers.",
-      technologies: ["TensorFlow", "PyTorch", "Neural Networks", "Computer Vision", "NLP", "Quantum ML"],
+      icon: Zap,
+      title: "AI & Data Analytics",
+      description: "Unlock the power of your data with our AI and analytics solutions. We build intelligent systems that provide actionable insights, automate processes, and drive data-driven decision making.",
+      technologies: ["Python", "TensorFlow", "PyTorch", "Apache Spark", "Elasticsearch", "Tableau"],
       features: [
-        "Deep Learning Models",
-        "Predictive Neural Networks",
-        "Computer Vision Systems",
+        "Machine Learning Models",
+        "Predictive Analytics",
         "Natural Language Processing",
-        "Quantum Data Processing",
-        "Cybernetic Decision Engines"
+        "Computer Vision",
+        "Real-time Data Processing",
+        "Business Intelligence Dashboards"
       ]
     },
     {
       icon: Shield,
-      title: "Cyber Security Systems",
-      description: "Protect your digital assets with our advanced cybernetic security protocols. Our AI-powered defense systems learn from threats and adapt to provide comprehensive protection.",
-      technologies: ["Cybersecurity", "AI Defense", "Neural Firewalls", "Quantum Encryption", "Blockchain", "Biometrics"],
+      title: "IT Consulting",
+      description: "Strategic technology guidance to help your business thrive. Our experts provide comprehensive IT consulting services to optimize your technology stack, improve security, and align IT with business goals.",
+      technologies: ["Security Audits", "Architecture Design", "DevOps", "Agile", "ITIL", "Compliance"],
       features: [
-        "Neural Threat Detection",
-        "Adaptive Security Protocols",
-        "Quantum Encryption Systems",
-        "Biometric Authentication",
-        "AI-Powered Monitoring",
-        "Autonomous Response Systems"
+        "Technology Strategy Planning",
+        "System Architecture Review",
+        "Security Assessment",
+        "Digital Transformation",
+        "Process Optimization",
+        "Team Training & Support"
       ]
     }
   ];
@@ -73,59 +73,59 @@ const Services = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 via-cyan-500 to-purple-600 bg-clip-text text-transparent">
-            Cybernetic Capabilities
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Our Expertise
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-            Advanced technology solutions that merge human intelligence with machine precision. 
-            Our neural-inspired systems evolve, adapt, and optimize beyond conventional limits.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            We deliver comprehensive technology solutions that drive innovation, efficiency, and growth. 
+            Our team of experts combines deep technical knowledge with industry best practices to transform your business.
           </p>
         </div>
       </section>
 
       {/* Services Sections */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-16 sm:space-y-20">
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto space-y-20">
           {services.map((service, index) => (
-            <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-12`}>
-              <div className="flex-1 w-full">
-                <Card className="bg-slate-900/50 border-green-500/20 h-full">
+            <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12`}>
+              <div className="flex-1">
+                <Card className="bg-slate-900/50 border-cyan-500/20 h-full">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-4">
-                      <service.icon className="w-10 sm:w-12 h-10 sm:h-12 text-green-400" />
-                      <CardTitle className="text-xl sm:text-2xl text-green-300">{service.title}</CardTitle>
+                      <service.icon className="w-12 h-12 text-cyan-400" />
+                      <CardTitle className="text-2xl text-cyan-300">{service.title}</CardTitle>
                     </div>
-                    <CardDescription className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                    <CardDescription className="text-gray-300 text-lg leading-relaxed">
                       {service.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-semibold text-green-300 mb-3">Neural Features</h4>
+                      <h4 className="text-lg font-semibold text-cyan-300 mb-3">Key Features</h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {service.features.map((feature, idx) => (
-                          <li key={idx} className="text-gray-400 flex items-center text-sm sm:text-base">
-                            <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0"></span>
+                          <li key={idx} className="text-gray-400 flex items-center">
+                            <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-green-300 mb-3">Core Technologies</h4>
+                      <h4 className="text-lg font-semibold text-cyan-300 mb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {service.technologies.map((tech, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-green-900/30 text-green-300 text-xs sm:text-sm rounded-full border border-green-500/30">
+                          <span key={idx} className="px-3 py-1 bg-cyan-900/30 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
                     <Link to="/contact">
-                      <Button className="bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white text-sm sm:text-base">
-                        Initialize System
+                      <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white">
+                        Get Started
                       </Button>
                     </Link>
                   </CardContent>
@@ -137,18 +137,18 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-green-900/50 to-cyan-900/50 rounded-2xl p-8 sm:p-12 border border-green-500/20">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-green-300">
-              Ready to Enhance Your Systems?
+          <div className="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 rounded-2xl p-12 border border-cyan-500/20">
+            <h2 className="text-4xl font-bold mb-6 text-cyan-300">
+              Ready to Transform Your Business?
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 mb-8">
-              Let's integrate cybernetic intelligence into your digital infrastructure.
+            <p className="text-xl text-gray-300 mb-8">
+              Let's discuss how our expertise can help you achieve your technology goals.
             </p>
             <Link to="/contact">
-              <Button className="bg-gradient-to-r from-green-500 to-cyan-600 hover:from-green-600 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 text-base sm:text-lg rounded-full shadow-lg hover:shadow-green-500/25 transition-all duration-300">
-                Begin Integration
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+                Start Your Project
               </Button>
             </Link>
           </div>
