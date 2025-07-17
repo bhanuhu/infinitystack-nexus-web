@@ -71,7 +71,7 @@ const Services = () => {
     <div className="min-h-screen bg-slate-950 text-white relative overflow-x-hidden">
       <ParticleBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -79,22 +79,24 @@ const Services = () => {
             Our Expertise
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We deliver comprehensive technology solutions that drive innovation, efficiency, and growth. 
+            We deliver comprehensive technology solutions that drive innovation, efficiency, and growth.
             Our team of experts combines deep technical knowledge with industry best practices to transform your business.
           </p>
         </div>
       </section>
 
       {/* Services Sections */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/60">
         <div className="max-w-6xl mx-auto space-y-20">
           {services.map((service, index) => (
             <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12`}>
               <div className="flex-1">
-                <Card className="bg-slate-900/50 border-cyan-500/20 h-full">
+                <Card className="bg-gradient-to-br from-slate-900/80 to-slate-800/80 border-cyan-500/20 shadow-2xl rounded-2xl p-2">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-4">
-                      <service.icon className="w-12 h-12 text-cyan-400" />
+                      <span className="inline-block p-3 rounded-full bg-cyan-900/30 group hover:bg-cyan-400/20 transition-all duration-300">
+                        <service.icon className="w-12 h-12 text-cyan-400 group-hover:scale-110 group-hover:text-cyan-300 transition-transform duration-300" />
+                      </span>
                       <CardTitle className="text-2xl text-cyan-300">{service.title}</CardTitle>
                     </div>
                     <CardDescription className="text-gray-300 text-lg leading-relaxed">
@@ -104,7 +106,7 @@ const Services = () => {
                   <CardContent className="space-y-6">
                     <div>
                       <h4 className="text-lg font-semibold text-cyan-300 mb-3">Key Features</h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 bg-slate-900/40 rounded-lg p-4">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="text-gray-400 flex items-center">
                             <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>
@@ -113,21 +115,23 @@ const Services = () => {
                         ))}
                       </ul>
                     </div>
-                    <div>
+                    <div className="border-t border-cyan-500/10 pt-4">
                       <h4 className="text-lg font-semibold text-cyan-300 mb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {service.technologies.map((tech, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-cyan-900/30 text-cyan-300 text-sm rounded-full border border-cyan-500/30">
+                          <span key={idx} className="px-3 py-1 bg-cyan-900/40 text-cyan-200 text-sm rounded-full border border-cyan-500/30 font-medium shadow-sm hover:bg-cyan-500/20 transition-colors duration-200">
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
-                    <Link to="/contact">
-                      <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white">
-                        Get Started
-                      </Button>
-                    </Link>
+                    <div className="pt-4 flex justify-center">
+                      <Link to="/contact">
+                        <Button variant="default" className="rounded-full px-8 py-2 shadow-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-base font-semibold">
+                          Get Started
+                        </Button>
+                      </Link>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
@@ -147,7 +151,7 @@ const Services = () => {
               Let's discuss how our expertise can help you achieve your technology goals.
             </p>
             <Link to="/contact">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+              <Button variant="default" className="rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
                 Start Your Project
               </Button>
             </Link>

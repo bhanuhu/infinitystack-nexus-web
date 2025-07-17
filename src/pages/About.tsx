@@ -98,7 +98,7 @@ const About = () => {
     <div className="min-h-screen bg-slate-950 text-white relative overflow-x-hidden">
       <ParticleBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -106,7 +106,7 @@ const About = () => {
             About InfinityStack
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We are pioneers in the digital transformation space, dedicated to empowering businesses 
+            We are pioneers in the digital transformation space, dedicated to empowering businesses
             with innovative technology solutions that drive growth and success.
           </p>
         </div>
@@ -118,27 +118,27 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-cyan-300">Our Story</h2>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                InfinityStack was founded in 2018 with a simple yet ambitious vision: to bridge the gap between 
-                cutting-edge technology and practical business solutions. Our founders, having witnessed the transformative 
-                power of technology in various industries, recognized the need for a company that could make advanced 
+                InfinityStack was founded in 2018 with a simple yet ambitious vision: to bridge the gap between
+                cutting-edge technology and practical business solutions. Our founders, having witnessed the transformative
+                power of technology in various industries, recognized the need for a company that could make advanced
                 technological capabilities accessible to businesses of all sizes.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                From our humble beginnings as a small team of passionate developers and strategists, we have grown into 
-                a comprehensive technology partner serving clients across the globe. Our journey has been marked by 
+                From our humble beginnings as a small team of passionate developers and strategists, we have grown into
+                a comprehensive technology partner serving clients across the globe. Our journey has been marked by
                 continuous learning, adaptation, and an unwavering commitment to excellence.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Today, InfinityStack stands as a testament to the power of innovation and collaboration. We continue to 
-                push boundaries, explore new technologies, and create solutions that not only meet current needs but 
+                Today, InfinityStack stands as a testament to the power of innovation and collaboration. We continue to
+                push boundaries, explore new technologies, and create solutions that not only meet current needs but
                 anticipate future challenges.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               {values.map((value, index) => (
                 <Card key={index} className="bg-slate-900/50 border-cyan-500/20 text-center p-4">
@@ -161,16 +161,20 @@ const About = () => {
               The brilliant minds behind InfinityStack's success
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="bg-slate-900/50 border-cyan-500/20 text-center group hover:border-cyan-400/50 transition-all duration-300">
                 <CardHeader className="pb-4">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-cyan-500/30 group-hover:ring-cyan-400/50 transition-all duration-300">
-                    <img 
-                      src={member.avatar} 
+                    <img
+                      src={member.avatar}
                       alt={member.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = '/fallback.png';
+                      }}
                     />
                   </div>
                   <CardTitle className="text-cyan-300 group-hover:text-cyan-200 transition-colors">
@@ -198,7 +202,7 @@ const About = () => {
               Key milestones that shaped our growth and success
             </p>
           </div>
-          
+
           <div className="space-y-8">
             {milestones.map((milestone, index) => (
               <div key={index} className="flex items-start gap-6">

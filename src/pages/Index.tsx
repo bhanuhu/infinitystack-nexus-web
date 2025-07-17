@@ -106,7 +106,7 @@ const Index = () => {
     <div className="min-h-screen bg-slate-950 text-white relative overflow-x-hidden">
       <ParticleBackground />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto z-10">
@@ -118,7 +118,7 @@ const Index = () => {
               Infinite Solutions. Infinite Possibilities.
             </p>
             <Link to="/services">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+              <Button variant="default" className="rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
                 Explore Our Services
               </Button>
             </Link>
@@ -134,11 +134,11 @@ const Index = () => {
               About StaxInfinity
             </h2>
             <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-4">
-              We are a cutting-edge technology company dedicated to transforming businesses through innovative software solutions, 
+              We are a cutting-edge technology company dedicated to transforming businesses through innovative software solutions,
               cloud technologies, and AI-powered systems. Our mission is to provide infinite possibilities for your digital transformation.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {coreValues.map((value, index) => (
               <Card key={index} className="bg-slate-900/50 border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 group">
@@ -168,7 +168,7 @@ const Index = () => {
               Comprehensive technology solutions tailored to your needs
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <Link key={index} to={service.href} className="group">
@@ -200,7 +200,7 @@ const Index = () => {
               Showcasing our latest innovations and successful implementations
             </p>
           </div>
-          
+
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {projects.map((project, index) => (
@@ -208,10 +208,12 @@ const Index = () => {
                   <Card className="bg-slate-900/50 border-cyan-500/20">
                     <CardContent className="p-0">
                       <div className="aspect-video overflow-hidden rounded-t-lg">
-                        <img 
-                          src={project.image} 
+                        <img
+                          src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => (e.currentTarget.src = '/fallback.png')}
                         />
                       </div>
                       <div className="p-4 sm:p-6">
@@ -242,7 +244,7 @@ const Index = () => {
               What Our Clients Say
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-slate-900/50 border-cyan-500/20">
@@ -270,7 +272,7 @@ const Index = () => {
               Let's discuss how we can transform your business with innovative technology solutions.
             </p>
             <Link to="/contact">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+              <Button variant="default" className="rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
                 Contact Us
               </Button>
             </Link>

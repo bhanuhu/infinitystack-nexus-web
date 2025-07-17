@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Phone, MapPin, Users } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -33,7 +33,7 @@ const Contact = () => {
 
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you soon.",
@@ -86,36 +86,34 @@ const Contact = () => {
     <div className="min-h-screen bg-slate-950 text-white relative overflow-x-hidden">
       <ParticleBackground />
       <Navigation />
-      
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
+      <section className="pt-24 pb-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
             Get In Touch
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to transform your business with cutting-edge technology? 
+            Ready to transform your business with cutting-edge technology?
             Let's discuss how we can help you achieve your goals.
           </p>
         </div>
       </section>
-
-      {/* Contact Form and Details */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="bg-slate-900/50 border-cyan-500/20">
-              <CardHeader>
-                <CardTitle className="text-2xl text-cyan-300">Send us a message</CardTitle>
-                <CardDescription className="text-gray-400">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-cyan-300">Name</Label>
+      {/* Contact Form and Info */}
+      <section className="py-8 px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* Contact Form */}
+          <Card className="bg-gradient-to-br from-slate-900/80 to-slate-800/80 border-cyan-500/20 shadow-xl p-2">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-2xl text-cyan-300">Send us a message</CardTitle>
+              <CardDescription className="text-gray-400">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-cyan-300">Name</Label>
+                  <div className="relative">
                     <Input
                       id="name"
                       name="name"
@@ -123,13 +121,17 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="bg-slate-800 border-cyan-500/30 text-white placeholder:text-gray-400 focus:border-cyan-400"
+                      className="bg-slate-800 border-cyan-500/30 text-white placeholder:text-gray-400 focus:border-cyan-400 pl-10"
                       placeholder="Your full name"
                     />
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-cyan-400">
+                      <Users className="w-5 h-5" />
+                    </span>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-cyan-300">Email</Label>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-cyan-300">Email</Label>
+                  <div className="relative">
                     <Input
                       id="email"
                       name="email"
@@ -137,108 +139,88 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-slate-800 border-cyan-500/30 text-white placeholder:text-gray-400 focus:border-cyan-400"
+                      className="bg-slate-800 border-cyan-500/30 text-white placeholder:text-gray-400 focus:border-cyan-400 pl-10"
                       placeholder="your.email@example.com"
                     />
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-cyan-400">
+                      <Mail className="w-5 h-5" />
+                    </span>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-cyan-300">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="bg-slate-800 border-cyan-500/30 text-white placeholder:text-gray-400 focus:border-cyan-400 resize-none"
-                      placeholder="Tell us about your project or how we can help you..."
-                    />
-                  </div>
-                  
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-cyan-300">Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="bg-slate-800 border-cyan-500/30 text-white placeholder:text-gray-400 focus:border-cyan-400 resize-none"
+                    placeholder="Tell us about your project or how we can help you..."
+                  />
+                </div>
+                <div className="pt-2 flex justify-center">
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 text-lg rounded-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+                    variant="default"
+                    className="rounded-full px-8 py-2 shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 text-base"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Contact Details */}
-            <div className="space-y-8">
-              <Card className="bg-slate-900/50 border-cyan-500/20">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-cyan-300">Contact Information</CardTitle>
-                  <CardDescription className="text-gray-400">
-                    Reach out to us through any of these channels.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {contactDetails.map((detail, index) => (
-                    <div key={index} className="flex flex-col space-y-1">
-                      <h4 className="text-cyan-300 font-semibold">{detail.title}</h4>
-                      <a 
-                        href={detail.href}
-                        className="text-gray-400 hover:text-cyan-300 transition-colors duration-200"
-                      >
-                        {detail.value}
-                      </a>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card className="bg-slate-900/50 border-cyan-500/20">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-cyan-300">Follow Us</CardTitle>
-                  <CardDescription className="text-gray-400">
-                    Stay connected with our latest updates and insights.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex space-x-6">
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+          {/* Contact Info & Social */}
+          <div className="flex flex-col gap-6">
+            <Card className="bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-cyan-900/60 border-cyan-500/30 shadow-2xl p-6 rounded-2xl">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl text-cyan-300">Contact Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 group">
+                    <Mail className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-200" />
+                    <a href="mailto:hello@infinitystack.dev" className="text-gray-300 hover:text-cyan-300 transition-colors duration-200 font-medium">hello@infinitystack.dev</a>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <Phone className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-200" />
+                    <a href="tel:+15551234567" className="text-gray-300 hover:text-cyan-300 transition-colors duration-200 font-medium">+1 (555) 123-4567</a>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <MapPin className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-200" />
+                    <span className="text-gray-300 font-medium">123 Tech Street, Innovation District, Silicon Valley, CA 94000</span>
+                  </div>
+                </div>
+                <div className="border-t border-cyan-500/20 pt-4">
+                  <div className="flex gap-4 justify-center">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`text-gray-400 ${social.color} transition-colors duration-200`}
+                        className={`text-gray-400 ${social.color} hover:text-cyan-300 transition-colors duration-200 rounded-full p-2 bg-slate-800/40 hover:bg-cyan-900/30 shadow-sm`}
                         aria-label={social.name}
                       >
-                        <social.icon className="w-8 h-8" />
+                        <social.icon className="w-7 h-7" />
                       </a>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* Embedded Map Placeholder */}
-              <Card className="bg-slate-900/50 border-cyan-500/20">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-cyan-300">Our Location</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="aspect-video bg-slate-800 rounded-lg flex items-center justify-center">
-                    <p className="text-gray-400">Interactive Map Coming Soon</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
-      <section className="py-16 px-4">
+      <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-6 text-cyan-300">Frequently Asked Questions</h2>
           </div>
-          
           <div className="space-y-6">
             {[
               {
@@ -270,7 +252,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
